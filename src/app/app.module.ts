@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/modules/material.module';
@@ -14,9 +13,10 @@ import { TodoEffects } from './shared/store/todos.effetcs';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routing';
+import { TodosComponent } from './features/todos.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TodosComponent],
   imports: [
     BrowserModule,
     FormsModule,
