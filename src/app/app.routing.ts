@@ -6,4 +6,8 @@ export const APP_ROUTES: Routes = [
     path: '',
     component: TodosComponent,
   },
+  {
+    path: ':todoId',
+    component: TodosComponent,
+  },
 ];
