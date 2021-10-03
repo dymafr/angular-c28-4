@@ -8,7 +8,7 @@ import {
   tryDeleteTodoAction,
   tryUpdateTodoAction,
 } from '../shared/store/todos.actions';
-import { selectTodosData } from '../shared/store/todos.selectors';
+import { selectTodo, selectTodosData } from '../shared/store/todos.selectors';
 
 @Component({
   selector: 'app-todos',
@@ -18,6 +18,8 @@ import { selectTodosData } from '../shared/store/todos.selectors';
 export class TodosComponent {
   public todos$: Observable<Todo[]> = this.store.select(selectTodosData);
   public message!: string;
+  public selectedTodo$: Observable<Todo | null | undefined> =
+    this.store.select(selectTodo);
 
   constructor(private store: Store) {}
 

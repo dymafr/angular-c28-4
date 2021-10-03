@@ -9,7 +9,7 @@
         </button>
       </div>
       <ul>
-        <li *ngFor="let todo of todos$ | async">
+        <li [routerLink]="['/', todo._id]" *ngFor="let todo of todos$ | async">
           <span>{{ todo.message }} ({{ todo.done }})</span>
           <button mat-raised-button color="primary" (click)="updateTodo(todo)">
             toggle
@@ -19,6 +19,11 @@
           </button>
         </li>
       </ul>
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="selectedTodo$ | async; let selectedTodo">
+    <mat-card-content>
+      {{ selectedTodo.message }}
     </mat-card-content>
   </mat-card>
 </div>
