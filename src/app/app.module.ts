@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TodoEffects } from './shared/store/todos.effetcs';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routing';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES),
     StoreModule.forRoot(ROOT_REDUCERS),
     EffectsModule.forRoot([TodoEffects]),
     StoreDevtoolsModule.instrument({
