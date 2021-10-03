@@ -1,0 +1,41 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #eee;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 600px;
+}
+
+.input-container {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  input {
+    flex: 1;
+    margin-right: 15px;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  & > * {
+    margin-bottom: 10px;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    span {
+      flex: 1;
+    }
+    button:nth-child(2) {
+      margin-right: 15px;
+    }
+  }
+}
