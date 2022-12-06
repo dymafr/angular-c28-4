@@ -23,7 +23,11 @@ export class TodoEffects {
       ofType(fetchTodosAction),
       switchMap(() =>
         this.todosService.fetchTodos().pipe(
-          map((todos: Todo[]) => fetchTodosSuccessAction({ todos })),
+          map((todos: Todo[] | Todo) =>
+            fetchTodosSuccessAction({
+              todos: Array.isArray(todos) ? todos : [todos],
+            })
+          ),
           catchError((error) => of(errorTodoAction({ error })))
         )
       )
