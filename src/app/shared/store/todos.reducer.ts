@@ -7,7 +7,7 @@ export interface TodosState {
   error: any;
 }
 
-export const TODOS_INITIAL_STATE = {
+export const TODOS_INITIAL_STATE: TodosState = {
   data: [],
   error: null,
 };
